@@ -24,11 +24,10 @@ import { Pagina3Page } from '../pages/pagina3/pagina3'
     BrowserModule,
     IonicModule.forRoot(MyApp, {}, {
       links: [
-        {component: Pagina1Page, name: 'Pagina1', segment: 'pagina1'},
         {component: Pagina2Page, name: 'Pagina2', segment: 'pagina2'},
         {component: Pagina3Page, name: 'Pagina3', segment: 'pagina3/:text'}
       ]
-    }),
+    })
 
   ],
   bootstrap: [IonicApp],

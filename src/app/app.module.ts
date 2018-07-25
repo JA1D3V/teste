@@ -5,21 +5,38 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+//Pages
+import { Pagina1Page } from '../pages/pagina1/pagina1'
+import { Pagina2Page } from '../pages/pagina2/pagina2'
+import { Pagina3Page } from '../pages/pagina3/pagina3'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    
+    //Pages
+    Pagina1Page,
+    Pagina2Page,
+    Pagina3Page
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {}, {
+      links: [
+        {component: Pagina1Page, name: 'Pagina1', segment: 'pagina1'},
+        {component: Pagina2Page, name: 'Pagina2', segment: 'pagina2'},
+        {component: Pagina3Page, name: 'Pagina3', segment: 'pagina3/:text'}
+      ]
+    }),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    Pagina1Page,
+    Pagina2Page,
+    Pagina3Page
   ],
   providers: [
     StatusBar,
